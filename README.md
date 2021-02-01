@@ -1,2 +1,2 @@
-# Projcets
-Repo vor various home projects
+# Projects
+Repo for various home projects and testing out different languages
