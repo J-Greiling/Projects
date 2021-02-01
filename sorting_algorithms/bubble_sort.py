@@ -9,7 +9,7 @@ import numpy as np
 # function
 
 
-def bubble_sort(array: np.ndarray) -> np.ndarray:
+def sort(array: np.ndarray) -> np.ndarray:
     '''Bubble sort Algorithm to sort array in ascending order
 
     Parameters:
@@ -34,6 +34,6 @@ def bubble_sort(array: np.ndarray) -> np.ndarray:
 if __name__ == '__main__':
     array = np.array([1, -3, 2, 3, 7, 1], np.int32)
     print(f"Array before sortig:\n {array}\n")
-    array = bubble_sort(array)
+    array = sort(array)
     print(f"Array after sorting:\n {array}\n")
 
