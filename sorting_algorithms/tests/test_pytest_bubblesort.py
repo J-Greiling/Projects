@@ -18,7 +18,7 @@ def test_sorting():
     array_in = np.array([2, 5, 1])
     array_out = np.array([1, 2, 5])
 
-    assert (array_out.all() == bubble.sort(array_in).all())
+    assert (array_out == bubble.sort(array_in)).all()
 
 
 def test_negative():
@@ -47,10 +47,10 @@ def test_single_entry():
 
 def test_doubles():
     '''Handling of double values'''
-    array_in = np.array([3.2, 2.9, 2.1])
-    array_out = np.array([2.1, 2.9, 2, 3.2])
+    array_in = bubble.sort(np.array([3.1, 2.9, 2.4]))
 
-    assert (array_out == bubble.sort(array_in)).all()
+    assert all(array_in[x] <= array_in[x + 1]
+               for x in range(len(array_in) - 1))
 
 
 
