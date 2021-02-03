@@ -3,11 +3,10 @@
 import sys
 import os
 
-my_path = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(my_path, '..', ))
+sys.path.insert(0, os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), '..', ))
 
 import bubble
-import numpy as np
 
 __author__ = "Jakob Greiling"
 __date__ = "2021-02"
@@ -15,42 +14,42 @@ __date__ = "2021-02"
 
 def test_sorting():
     '''Test if Array is being sorted'''
-    array_in = np.array([2, 5, 1])
-    array_out = np.array([1, 2, 5])
+    array = [2, 5, 1]
+    bubble.sort(array)
 
-    assert (array_out == bubble.sort(array_in)).all()
+    assert all(array[x] <= array[x + 1] for x in range(len(array) - 1))
 
 
 def test_negative():
     '''Handling of negative numbers'''
-    array_in = np.array([2, -5, 1])
-    array_out = np.array([-5, 1, 2])
+    array = [2, -5, 1]
+    bubble.sort(array)
 
-    assert (array_out == bubble.sort(array_in)).all()
+    assert all(array[x] <= array[x + 1] for x in range(len(array) - 1))
 
 
 def test_double_entry():
     '''Handling of repeating numbers'''
-    array_in = np.array([2, 5, 2])
-    array_out = np.array([2, 2, 5])
+    array = [2, 5, 2]
+    bubble.sort(array)
 
-    assert (array_out == bubble.sort(array_in)).all()
+    assert all(array[x] <= array[x + 1] for x in range(len(array) - 1))
 
 
 def test_single_entry():
     '''Handling 1 number'''
-    array_in = np.array([2])
-    array_out = np.array([2])
+    array = [2]
+    bubble.sort(array)
 
-    assert (array_out == bubble.sort(array_in)).all()
+    assert all(array[x] <= array[x + 1] for x in range(len(array) - 1))
 
 
 def test_doubles():
     '''Handling of double values'''
-    array_in = bubble.sort(np.array([3.1, 2.9, 2.4]))
+    array = [3.1, 2.9, 2.4]
+    bubble.sort(array)
 
-    assert all(array_in[x] <= array_in[x + 1]
-               for x in range(len(array_in) - 1))
+    assert all(array[x] <= array[x + 1] for x in range(len(array) - 1))
 
 
 
