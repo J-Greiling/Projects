@@ -45,5 +45,13 @@ def test_single_entry():
     assert (array_out == bubble.sort(array_in)).all()
 
 
+def test_doubles():
+    '''Handling of double values'''
+    array_in = np.array([3.2, 2.9, 2.1])
+    array_out = np.array([2.1, 2.9, 2, 3.2])
+
+    assert (array_out == bubble.sort(array_in)).all()
+
+
 
 

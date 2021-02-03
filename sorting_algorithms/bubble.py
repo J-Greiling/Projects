@@ -32,7 +32,7 @@ def sort(array: np.ndarray) -> np.ndarray:
 
 # main Method
 if __name__ == '__main__':
-    array = np.array([1, -3, 2, 3, 7, 1], np.int32)
+    array = np.array([1, -3, 2, 7, 1], np.int32)
     print(f"Array before sortig:\n {array}\n")
     array = sort(array)
     print(f"Array after sorting:\n {array}\n")
