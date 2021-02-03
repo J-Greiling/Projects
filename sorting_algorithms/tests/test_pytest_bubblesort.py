@@ -18,7 +18,7 @@ def test_sorting():
     array_in = np.array([2, 5, 1])
     array_out = np.array([1, 2, 5])
 
-    assert (array_out == bubble.sort(array_in)).all()
+    assert (array_out.all() == bubble.sort(array_in).all())
 
 
 def test_negative():
