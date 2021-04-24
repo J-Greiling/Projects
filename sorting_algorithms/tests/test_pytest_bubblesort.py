@@ -37,7 +37,7 @@ def test_double_entry():
 
 
 def test_single_entry():
-    '''Handling 1 number'''
+    '''Handling one number'''
     array = [2]
     bubble.sort(array)
 
